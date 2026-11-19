@@ -26,4 +26,4 @@ Allow: /
 User-agent: *
 Allow: /
 
-Sitemap: https://derankf.github.io/diyi-geo/sitemap.xml
+Sitemap: https://derankf.github.io/de-rank/sitemap.xml

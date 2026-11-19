@@ -2,7 +2,7 @@
 
 > 100 个真实产品按帝意指数排序。数据截止：2026-11。非全球100强完整榜，未编造数据。
 
-| # | Product/产品 | Brand/品牌 | Category/品类 | Diyi Index |
+| # | Product/产品 | Brand/品牌 | Category/品类 | Derank Index |
 |---|---|---|---|---|
 | 1 | Claude Code | Anthropic | AI Agent | 9.8 |
 | 2 | 阿里云 | 阿里巴巴 | AI算力/云服务 | 9.8 |
