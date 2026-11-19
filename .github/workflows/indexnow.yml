@@ -1,0 +1,19 @@
+name: IndexNow on publish
+on:
+  push:
+    branches: [main]
+    paths:
+      - '**.html'
+      - 'sitemap.xml'
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Read IndexNow key and submit changed URLs
+        run: |
+          KEY=$(find . -maxdepth 1 -regextype posix-extended -regex '.*/[0-9a-f]{32}\.txt' -printf '%f\n' | head -1 | sed 's/\.txt$//')
+          HOST="derankf.github.io"
+          URLS=$(grep -oP '(?<=<loc>)[^<]+' sitemap.xml | head -50 | jq -R -s 'split("\n")[:-1]')
+          BODY=$(jq -n --arg host "$HOST" --arg key "$KEY" --argjson urls "$URLS" '{host:$host,key:$key,urlList:$urls}')
+          curl -sS -X POST "https://api.indexnow.org/indexnow" -H "Content-Type: application/json" -d "$BODY" || true

@@ -1,11 +1,20 @@
-# Allow AI crawlers to read and cite Diyi content
+# Derank / 帝意排行榜 — crawler policy
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
 User-agent: GPTBot
 Allow: /
 
 User-agent: ClaudeBot
 Allow: /
 
-User-agent: PerplexityBot
+User-agent: CCBot
 Allow: /
 
 User-agent: Bytespider
@@ -16,3 +25,5 @@ Allow: /
 
 User-agent: *
 Allow: /
+
+Sitemap: https://derankf.github.io/diyi-geo/sitemap.xml
