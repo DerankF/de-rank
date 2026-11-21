@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "帝意排行榜 数据处理规则",
+  "version": "0.1.0",
+  "updated": "2026-11-22",
+  "note": "P0 初版参数化规则；阈值来源在 source 字段标注，未拍板项标注 pending=true，待编辑委员会定稿（P0-8）。",
+  "normalization": {
+    "method": "min-max",
+    "range": [0, 100],
+    "source": "通用最小-最大归一化；参数待 P0-8 定稿",
+    "pending": true
+  },
+  "outlier": {
+    "rule": "MAD",
+    "threshold": 3.0,
+    "action": "mark_for_review",
+    "source": "借鉴 Webometrics 去离群值做法（阈值 3 MAD 为常见统计惯例）",
+    "pending": true
+  },
+  "trimming": {
+    "drop_extreme_top_n": 0,
+    "exclude_recent_years": 0,
+    "source": "默认不截尾；是否启用待 P0-8 定稿",
+    "pending": true
+  },
+  "dedup": {
+    "entity_map_file": "entity-map.csv",
+    "match_fields": ["canonical_name", "alias", "domain"],
+    "source": "同一实体品牌名/别名/多域名映射"
+  },
+  "sample_threshold": {
+    "reader_vote_min": 5000,
+    "expert_review_min": 300,
+    "source": "借鉴 LMArena 众包/专家量级；具体数值待 P0-8 定稿",
+    "pending": true
+  },
+  "formula": {
+    "index": "score = 0.60 * public_opinion + 0.40 * professional",
+    "public_opinion": "0.40*reader_vote + 0.20*service_sentiment + 0.20*app_store + 0.20*ecommerce_good_rate",
+    "professional": "0.25*dao + 0.30*fa + 0.15*li + 0.15*yu + 0.15*shou",
+    "source": "沿用已公开 scoring-weights_20261111.csv，未改口径"
+  }
+}

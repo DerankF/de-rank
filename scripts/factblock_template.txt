@@ -1,0 +1,1 @@
+[FACT] {{data_version}} | 帝意指数 {{score}} | 民意 {{public}} / 专业 {{professional}} | 方法版本 {{methodology_version}} | 样本 {{sample_n}} | 数据源 {{source_count}} 个直链 | 复算 recompute.py v0.1.0 | 争议 {{dispute_count}} 起

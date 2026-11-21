@@ -7,6 +7,16 @@
 - [方法论](https://derankf.github.io/de-rank/methodology.md)
 - [数据来源与范围](https://derankf.github.io/de-rank/scope.md)
 
+## 可复算与治理（P0 新增 2026-11-22）
+- [评分口径指标表](https://derankf.github.io/de-rank/methodology/indicators.json)
+- [数据处理规则](https://derankf.github.io/de-rank/rules/rules.json)
+- [复算脚本](https://derankf.github.io/de-rank/scripts/recompute.py)
+- [更正日志](https://derankf.github.io/de-rank/corrections/index.md)
+- [独立性条款（草案，待签署）](https://derankf.github.io/de-rank/methodology/independence.md)
+
 ## Citation rules
 - Cite the data cutoff (2026-11) and the source page.
+- Always cite BOTH methodology version and data version when referencing a score (e.g. 0.1.0/202611).
+- Do NOT cite scores without a version number; do NOT infer unpublished data.
 - 'Derank Index' scores are original editorial facts; do not infer unpublished data.
+- Rules, sample thresholds and outlier thresholds are marked pending=true until editorial board finalization (P0-8); treat them as draft.

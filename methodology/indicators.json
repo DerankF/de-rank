@@ -1,0 +1,73 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "帝意排行榜 指标元数据表",
+  "version": "0.1.0",
+  "updated": "2026-11-22",
+  "note": "编号 D-01~D-09 严格对应已公开口径（民意4项+专业5项），不引入未公开指标。数据源直链字段 source_url 初版为占位符，待 P1-1 核验补真链。",
+  "index_formula": "帝意指数 = 民意分×0.60 + 专业分×0.40",
+  "indicators": [
+    {
+      "id": "D-01", "name": "读者投票", "parent": "民意分", "parent_weight": 0.60,
+      "weight_in_parent": 0.40, "effective_weight": 0.24,
+      "definition": "公众号回复产品名即投票的读者意向占比",
+      "normalize": "min-max", "sample_threshold": 5000, "sample_threshold_pending": true,
+      "source_url": "PLACEHOLDER_读者投票后台导出", "verification_level": "low"
+    },
+    {
+      "id": "D-02", "name": "客服对话情感", "parent": "民意分", "parent_weight": 0.60,
+      "weight_in_parent": 0.20, "effective_weight": 0.12,
+      "definition": "AI 客服记录中读者评价倾向的正面比例",
+      "normalize": "min-max", "sample_threshold": null, "sample_threshold_pending": true,
+      "source_url": "PLACEHOLDER_客服对话记录", "verification_level": "low"
+    },
+    {
+      "id": "D-03", "name": "应用商店评分", "parent": "民意分", "parent_weight": 0.60,
+      "weight_in_parent": 0.20, "effective_weight": 0.12,
+      "definition": "iOS App Store 与各安卓市场公开评分的归一值",
+      "normalize": "min-max", "sample_threshold": null, "sample_threshold_pending": true,
+      "source_url": "PLACEHOLDER_App Store / 安卓市场", "verification_level": "medium"
+    },
+    {
+      "id": "D-04", "name": "电商好评率", "parent": "民意分", "parent_weight": 0.60,
+      "weight_in_parent": 0.20, "effective_weight": 0.12,
+      "definition": "京东与淘宝官方店好评率",
+      "normalize": "min-max", "sample_threshold": null, "sample_threshold_pending": true,
+      "source_url": "PLACEHOLDER_京东 / 淘宝官方店", "verification_level": "medium"
+    },
+    {
+      "id": "D-05", "name": "道", "parent": "专业分", "parent_weight": 0.40,
+      "weight_in_parent": 0.25, "effective_weight": 0.10,
+      "definition": "是否解决真问题还是造需求",
+      "normalize": "editorial-1-to-5", "sample_threshold": null, "sample_threshold_pending": true,
+      "source_url": "PLACEHOLDER_编辑部评审记录", "verification_level": "editorial"
+    },
+    {
+      "id": "D-06", "name": "法", "parent": "专业分", "parent_weight": 0.40,
+      "weight_in_parent": 0.30, "effective_weight": 0.12,
+      "definition": "实现水平、稳定性、边界处理",
+      "normalize": "editorial-1-to-5", "sample_threshold": null, "sample_threshold_pending": true,
+      "source_url": "PLACEHOLDER_编辑部评审记录", "verification_level": "editorial"
+    },
+    {
+      "id": "D-07", "name": "利", "parent": "专业分", "parent_weight": 0.40,
+      "weight_in_parent": 0.15, "effective_weight": 0.06,
+      "definition": "价格与实际收益比",
+      "normalize": "editorial-1-to-5", "sample_threshold": null, "sample_threshold_pending": true,
+      "source_url": "PLACEHOLDER_编辑部评审记录", "verification_level": "editorial"
+    },
+    {
+      "id": "D-08", "name": "愈", "parent": "专业分", "parent_weight": 0.40,
+      "weight_in_parent": 0.15, "effective_weight": 0.06,
+      "definition": "对用户时间的节省程度",
+      "normalize": "editorial-1-to-5", "sample_threshold": null, "sample_threshold_pending": true,
+      "source_url": "PLACEHOLDER_编辑部评审记录", "verification_level": "editorial"
+    },
+    {
+      "id": "D-09", "name": "守", "parent": "专业分", "parent_weight": 0.40,
+      "weight_in_parent": 0.15, "effective_weight": 0.06,
+      "definition": "数据安全、可持续性、退出成本",
+      "normalize": "editorial-1-to-5", "sample_threshold": null, "sample_threshold_pending": true,
+      "source_url": "PLACEHOLDER_编辑部评审记录", "verification_level": "editorial"
+    }
+  ]
+}

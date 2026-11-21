@@ -1,0 +1,17 @@
+{
+  "title": "帝意排行榜 changelog",
+  "note": "P0-7: 所有 P0/P1 决议写入此处，每条含唯一 ID、证据链接、影响评估、责任人、时间戳。空日志也保留。",
+  "entries": [
+    {
+      "id": "CHG-20261122-001",
+      "date": "2026-11-22",
+      "level": "P0",
+      "action": "建立公信力系统 P0 骨架（rules.json / recompute.py / indicators.json / JSON-LD / Fact Block / llms.txt / corrections / changelog）",
+      "evidence": "D:/WorkBuddy/Claw/media_engine/evo_loop/system/04_落地路线图.md",
+      "impact": "新增目录与文件，不改动现有站点页面",
+      "owner": "AI（改仓库）",
+      "status": "done",
+      "pending_human": ["P0-8 口径定稿", "P0-9 独立性条款签署", "P0-10 扫码/站长验证"]
+    }
+  ]
+}

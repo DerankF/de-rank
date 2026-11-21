@@ -1,0 +1,41 @@
+{
+  "$comment": "P0-5: 四类 JSON-LD 模板。占位符用 {{...}}，生成页面时替换。已按现有站点 derankf.github.io/de-rank 域名与 '帝意排行榜' 品牌填充固定值。",
+  "Organization": {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "@id": "https://derankf.github.io/de-rank/#organization",
+    "name": "帝意排行榜",
+    "alternateName": ["Derank", "帝意观察", "de-rank"],
+    "url": "https://derankf.github.io/de-rank/",
+    "slogan": "民意即帝意，看透世界，洞见趋势",
+    "description": "以可验证、可挑战、可推翻的评分体系发布产品排行榜的独立内容品牌"
+  },
+  "Dataset": {
+    "@context": "https://schema.org",
+    "@type": "Dataset",
+    "@id": "https://derankf.github.io/de-rank/{{page}}#dataset",
+    "name": "{{dataset_name}}",
+    "version": "{{methodology_version}}/{{data_version}}",
+    "dateModified": "{{date_modified}}",
+    "creator": {"@id": "https://derankf.github.io/de-rank/#organization"},
+    "distribution": [{"@type": "DataDownload", "encodingFormat": "text/csv", "contentUrl": "https://derankf.github.io/de-rank/snapshots/{{snapshot_file}}"}]
+  },
+  "Article": {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "@id": "https://derankf.github.io/de-rank/{{page}}#article",
+    "headline": "{{headline}}",
+    "dateModified": "{{date_modified}}",
+    "author": {"@id": "https://derankf.github.io/de-rank/#organization"},
+    "about": {"@id": "https://derankf.github.io/de-rank/{{page}}#dataset"}
+  },
+  "ItemList": {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "@id": "https://derankf.github.io/de-rank/{{page}}#ranking",
+    "numberOfItems": "{{n}}",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "{{item_name}}", "score": "{{score}}"}
+    ]
+  }
+}
